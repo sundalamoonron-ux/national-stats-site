@@ -1,0 +1,291 @@
+/* NusaData — identitas visual sendiri: hijau teal pekat, aksen amber,
+   latar kertas hangat, dan huruf sistem supaya situs tetap ringan. */
+
+:root {
+  --ink: #14201f;
+  --teal: #0b3d3a;
+  --teal-2: #0f766e;
+  --amber: #d97706;
+  --paper: #faf7f0;
+  --card: #ffffff;
+  --line: #e3ddd0;
+  --muted: #6b6459;
+  --focus: #0f766e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a { color: var(--teal-2); }
+a:hover { color: var(--amber); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Kepala situs */
+.site-header {
+  background: var(--teal);
+  color: #f3efe6;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(11, 61, 58, 0.25);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 60px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.brand {
+  color: #fff;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+.brand__mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--amber);
+  color: #231303;
+  font-size: 20px;
+}
+header nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+header nav a {
+  color: #d8e6e2;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 7px 11px;
+  border-radius: 8px;
+}
+header nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+header nav a.nav--on { color: #fff; background: var(--teal-2); }
+
+/* Isi */
+main { padding: 28px 20px 56px; }
+h1 { font-size: 40px; line-height: 1.12; margin: 8px 0 12px; letter-spacing: -0.02em; }
+h2 { font-size: 24px; margin: 36px 0 10px; letter-spacing: -0.01em; }
+h3 { font-size: 19px; margin: 24px 0 8px; }
+p { margin: 0 0 14px; }
+.lede { font-size: 19px; color: #3d4744; max-width: 62ch; }
+.muted { color: var(--muted); }
+.crumbs { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+.crumbs a { color: var(--muted); }
+.source { color: var(--muted); font-size: 13.5px; margin-top: 6px; }
+.note {
+  background: #fdf3dd;
+  border-left: 4px solid var(--amber);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+}
+section { margin-bottom: 8px; }
+
+/* Hero beranda */
+.hero {
+  background: var(--teal);
+  color: #f3efe6;
+  border-radius: 18px;
+  padding: 36px 32px 32px;
+  margin: 4px 0 8px;
+}
+.hero h1 { color: #fff; font-size: 46px; margin: 10px 0 14px; }
+.hero .lede { color: #d8e6e2; }
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f0b429;
+  margin: 0;
+}
+.hero__actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 0; }
+.btn {
+  display: inline-block;
+  background: var(--amber);
+  color: #231303;
+  font-weight: 700;
+  text-decoration: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover { background: #f0a832; color: #231303; }
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.compare-form .btn--ghost { color: var(--teal); box-shadow: inset 0 0 0 2px var(--teal-2); }
+.compare-form .btn--ghost:hover { background: #e6f2f0; color: var(--teal); }
+
+/* Kartu angka */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 14px 0;
+}
+.stat-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(20, 32, 31, 0.06);
+}
+.stat-card:hover { border-color: var(--teal-2); box-shadow: 0 4px 14px rgba(15, 118, 110, 0.14); }
+.stat-card__label { display: block; font-size: 14px; font-weight: 600; color: var(--muted); }
+.stat-card__value { display: block; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin: 4px 0 2px; }
+.stat-card__value small { font-size: 15px; font-weight: 600; color: var(--muted); }
+.stat-card__meta { display: block; font-size: 13px; color: var(--muted); }
+.stat-card--hot { border-top: 4px solid var(--amber); }
+
+/* Dua kolom */
+.split {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.split h2 { margin-top: 36px; }
+
+/* Daftar rilis dan fakta */
+.releases, .facts, .notes { list-style: none; padding: 0; margin: 0; }
+.releases li {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+.releases time { font-weight: 700; color: var(--teal-2); font-size: 14px; }
+.releases em, .facts em { display: block; font-style: normal; color: var(--muted); font-size: 13px; }
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.facts li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.facts strong { display: block; font-size: 21px; }
+.facts span { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.notes li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal-2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
+/* Tabel */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 15.5px; min-width: 560px; }
+.data-table th, .data-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+.data-table thead th { background: #f0ece1; font-size: 14px; }
+.data-table tbody tr:last-child td { border-bottom: 0; }
+.data-table tbody tr:hover { background: #f7f4ec; }
+.data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.data-table th button {
+  background: none; border: 0; padding: 0; font: inherit; font-weight: 700;
+  color: inherit; cursor: pointer; text-align: left;
+}
+.data-table th button:hover { color: var(--teal-2); }
+
+/* Kontrol */
+.search-row input {
+  width: 100%;
+  max-width: 480px;
+  font: inherit;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+.range-row { display: flex; gap: 8px; margin: 4px 0 12px; }
+.chip {
+  font: inherit; font-size: 14px; font-weight: 600;
+  padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--teal-2); background: transparent; color: var(--teal-2);
+  cursor: pointer;
+}
+.chip--on { background: var(--teal-2); color: #fff; }
+.compare-form {
+  display: flex; gap: 14px; align-items: end; flex-wrap: wrap;
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px; margin: 16px 0;
+}
+.compare-form label { font-weight: 600; font-size: 14px; display: grid; gap: 6px; flex: 1; min-width: 200px; }
+.compare-form select {
+  font: inherit; padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: #fff;
+}
+.compare-form .btn { flex: none; }
+
+/* Definisi */
+.defs dt { font-weight: 700; margin-top: 14px; }
+.defs dd { margin: 2px 0 0; color: #3d4744; }
+
+/* Grafik */
+svg { max-width: 100%; height: auto; display: block; }
+
+/* Kaki situs */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #f0ece1;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 28px 0 40px;
+}
+.site-footer p { margin: 0 0 8px; max-width: 72ch; }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  h1 { font-size: 30px; }
+  .hero { padding: 26px 20px; }
+  .hero h1 { font-size: 32px; }
+  .split { grid-template-columns: 1fr; gap: 0; }
+  .header-inner { gap: 8px; }
+  header nav a { padding: 6px 8px; font-size: 14px; }
+  .stat-card__value { font-size: 26px; }
+  .releases li { grid-template-columns: 1fr; gap: 0; }
+  main { padding-top: 20px; }
+}
